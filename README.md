@@ -3,22 +3,18 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## Get up and running
+### Dependencies (install these if you don't have them already)
+* [git](https://git-scm.com/downloads)
+* [docker](https://docs.docker.com/get-docker/).
 
-* Ruby version
+### Get the code
+* pull down the repo: `git clone git@github.com:montague/access_sigchi.git`
+* cd into the repo's root folder: `cd access_sigchi`
+* run `docker build -t access_sigchi .` (this may take a minute)
 
-* System dependencies
+### Run the app
+* to run the dev server: `docker run -it -p 3000:3000 -v $(pwd):/app access_sigchi`
+  * the server will be running here: http://localhost:3000 
+* to run the test suite: `docker run -it --rm access_sigchi bundle exec rspec`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
