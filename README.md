@@ -1,8 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 ## Get up and running
 ### Dependencies (install these if you don't have them already)
 * [git](https://git-scm.com/downloads)
