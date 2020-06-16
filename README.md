@@ -5,6 +5,7 @@
 
 ### Get the code
 * pull down the repo: `git clone git@github.com:montague/access_sigchi.git`
+  * if that doesn't work, try `git clone https://github.com/montague/access_sigchi.git`
 * cd into the repo's root folder: `cd access_sigchi`
 * run `docker build -t access_sigchi .` (this may take a minute)
 
