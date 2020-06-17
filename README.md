@@ -10,7 +10,7 @@
 * run `docker build -t access_sigchi .` (this may take a minute)
 
 ### Run the app
-* to run the dev server: `docker run -it -p 3000:3000 -v $(pwd):/app access_sigchi`
+* to run the dev server: `docker run -it -p 3000:3000 -v "$(pwd):/app" access_sigchi`
   * the server will be running here: http://localhost:3000 
-* to run the test suite: `docker run -it --rm -v $(pwd):/app access_sigchi bundle exec rspec`
+* to run the test suite: `docker run -it --rm -v "$(pwd):/app" access_sigchi bundle exec rspec`
 
