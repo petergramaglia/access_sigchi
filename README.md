@@ -10,6 +10,7 @@
 * Run `docker build -t access_sigchi .` 
   * This will build your app's docker image, which allows you to develop without having to install all the dependencies locally.
   * This could take a few minutes depending on your download speed. Make some popcorn?
+* To update your code to the latest version, run `git pull origin main` inside the app's directory
 
 ### Run the app
 * To run the dev server: `docker run -it -p 3000:3000 -v "$(pwd):/app" access_sigchi`
