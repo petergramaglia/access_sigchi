@@ -1,3 +1,6 @@
+## Goal: Batch Update Metadata of PDFs
+
+
 ## Get up and running
 ### Dependencies (install these if you don't have them already)
 * [git](https://git-scm.com/downloads)
