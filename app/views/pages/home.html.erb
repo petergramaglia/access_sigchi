@@ -1,4 +1,13 @@
 <h1>Hello Tufts Code for Good!</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<button><%= button_to 'Press me', download_pdf_path, method: :get %></button>
+<h2> Submit pdf below </h2>
+<%= form_tag( { :action => 'upload_pdf', :controller => 'pdfinformations'}, :multipart => true ) do %>
+   Upload file: <%= file_field_tag "file", accept: "application/pdf" %>
+   <br />
+   
+   <%= submit_tag( "Upload file" )  %>
+<% end %>
+
+
+<button><%= button_to 'download!', download_pdf_path, method: :get %></button>
