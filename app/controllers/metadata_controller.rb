@@ -1,16 +1,22 @@
 require 'hexapdf'
-
 class MetadataController < ApplicationController
-
     def display
-        doc = HexaPDF::Document.open('accessible.pdf')
-        @metadata = doc.trailer.info.value
+        doc = HexaPDF::Document.open('app/models/concerns/accessible.pdf')
+
+        doc = open_pdf
+        @metadata = doc.value
     end
 
     def create
-        doc = HexaPDF::Document.open('accessible.pdf')
+        doc = HexaPDF::Document.open('app/models/concerns/accessible.pdf')
         
-        doc.trailer.info.value = params[:edited].to_unsafe_h
+        doc = open_pdf
+        doc.value = params[:edited].to_unsafe_h
         doc.write('modified.pdf')
     end
+
+    def open_pdf
+        HexaPDF::Document.open('app/models/concerns/accessible.pdf').trailer.info
+    end
+
 end
