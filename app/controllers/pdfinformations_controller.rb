@@ -7,11 +7,13 @@ class PdfinformationsController < ApplicationController
 	end
 
 	def upload_pdf
-		file_field = params[:file] rescue nil
-		# # file_field is a StringIO object
-		file_field.content_type # 'text/csv'
-		puts file_field.full_original_filename
-		# puts "hello"
+		file = params[:file]
+		# byebug
+		puts file.original_filename
+		puts "hello"
+	end
+
+	def full_original_name
 	end
 
 	private 
