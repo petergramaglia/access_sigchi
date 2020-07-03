@@ -1,1 +1,10 @@
 <!-- Peter works his front-end magic in this file -->
+
+<!-- Added by erena for unit testing -->
+<h2> PDF Upload: </h2>
+<%= form_tag( { :action => 'upload_pdf', :controller => 'pdf_processor'}, :multipart => true ) do %>
+   Upload file: <%= file_field_tag "file", accept: "application/pdf" %>
+   <br />
+   
+   <%= submit_tag( "Upload file" )  %>
+<% end %>

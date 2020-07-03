@@ -11,6 +11,14 @@ class PdfProcessorController < ApplicationController
 
     ### This class will need to be updated to take
     # in the uploaded file and metadata
+
     pdf_processor = PdfProcessor.new
   end
+
+  def upload_pdf 
+    pdf_processor = params[:file]
+    # byebug
+    puts pdf_processor.original_filename
+  end
+
 end
