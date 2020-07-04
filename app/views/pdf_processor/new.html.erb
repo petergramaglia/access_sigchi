@@ -2,9 +2,33 @@
 
 <!-- Added by erena for unit testing -->
 <h2> PDF Upload: </h2>
-<%= form_tag( { :action => 'upload_pdf', :controller => 'pdf_processor'}, :multipart => true ) do %>
-   Upload file: <%= file_field_tag "file", accept: "application/pdf" %>
-   <br />
-   
+ <%= form_tag( { :action => 'upload_pdf', :controller => 'pdf_processor'}, :multipart => true ) do %>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <%= text_field_tag "title", nil, placeholder: "Enter paper title", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label for="author">Author</label>
+    <%= text_field_tag "author", nil, placeholder: "Enter author name(s)", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <%= text_field_tag "subject", nil, placeholder: "Enter subject", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Creation Date</label>
+    <%= text_field_tag "date", nil, placeholder: "Enter creation date", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label for="keywords">Keywords</label>
+    <%= text_field_tag "keywords", nil, placeholder: "Enter keyword(s)", class: "form-control" %>
+  </div>
+
+      Upload file: <%= file_field_tag "file", accept: "application/pdf" %>
+      <br />
    <%= submit_tag( "Upload file" )  %>
-<% end %>
+   <% end %>
