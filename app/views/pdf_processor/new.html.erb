@@ -1,7 +1,9 @@
 <!-- Peter works his front-end magic in this file -->
 
 <!-- Added by erena for unit testing -->
-<h2> PDF Upload: </h2>
+
+<h4> Enter metadata information and upload PDF below: </h4>
+
  <%= form_tag( { :action => 'upload_pdf', :controller => 'pdf_processor'}, :multipart => true ) do %>
   <div class="form-group">
     <label for="title">Title</label>
@@ -32,3 +34,8 @@
       <br />
    <%= submit_tag( "Upload file" )  %>
    <% end %>
+
+  <h2> Access SIGCHI PDF Tagging </h2>
+    <p>By using our converter you can easily metadata tag PDFs and download them. Our service is free and does not require any software or registration. By using our service you are accepting our <a href="terms-of-use/">terms of use</a>. </p>
+    <p> To tag a PDF, upload the untagged copy and enter the appropriate metadata information. As soon as the conversion is finished, you can download the file. </p>
+    <p> Enjoy! We hope you like our service. </p>

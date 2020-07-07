@@ -18,31 +18,37 @@
   </head>
 
   <body>
+    <div class="container">
+      <nav class="navbar  navbar-expand-lg navbar-light bg-light">
 
-    <nav class="navbar  navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Access SIGCHI</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <a class="navbar-brand" href="#">Access SIGCHI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <%=link_to "Home", root_url, class: "nav-link"%>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%=link_to "Home", root_url, class: "nav-link"%>
 
-            <!--<a class="nav-link" href="<%=root_url%>">Home <span class="sr-only">(current)</span></a>-->
-          </li>
-          <li class="nav-item">
-            <%=link_to "Tool", tool_url, class: "nav-link"%>
-          </li>
+              <!--<a class="nav-link" href="<%=root_url%>">Home <span class="sr-only">(current)</span></a>-->
+            </li>
+
+            
+            <li class="nav-item">
+              <%=link_to "About", about_url, class: "nav-link"%>
+            </li>
+          </ul>
           
-          <li class="nav-item">
-            <%=link_to "About", about_url, class: "nav-link"%>
-          </li>
-        </ul>
-        
-      </div>
-    </nav>
+        </div>
+      </nav>
+
+    
+
+
+      <img src="logo.png" alt="Access SIGCHI logo" height="100">
+    </div>  
+
     
     <main role="main" class="container">
       <%# Peter, the markup you want to show up on every page
@@ -51,6 +57,7 @@
       That's what the yield call is doing.%>
       <%= yield %>
     </main>
+
     <!-- bootstrap 4 js includes -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
