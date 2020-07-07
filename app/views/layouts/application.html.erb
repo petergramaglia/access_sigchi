@@ -1,18 +1,49 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
   <head>
-    <title>AccessSigchi</title>
+    <title> <%= @title || "AccessSigchi"  %> </title> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <!-- bootstrap 4 stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
     <%# comment out temporarily until we figure out why this breaks on windows %>
     <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <nav class="navbar  navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Access SIGCHI</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%=link_to "Home", root_url, class: "nav-link"%>
+
+            <!--<a class="nav-link" href="<%=root_url%>">Home <span class="sr-only">(current)</span></a>-->
+          </li>
+          <li class="nav-item">
+            <%=link_to "Tool", tool_url, class: "nav-link"%>
+          </li>
+          
+          <li class="nav-item">
+            <%=link_to "About", about_url, class: "nav-link"%>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+    
     <main role="main" class="container">
       <%# Peter, the markup you want to show up on every page
       goes in this file. The views that are specific to different
