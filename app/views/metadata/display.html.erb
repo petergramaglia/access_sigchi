@@ -1,0 +1,18 @@
+<h2>Metadata Keys</h2>
+<p>
+<%=@metadata.keys%>
+</p>
+
+<h2>Metadata Values</h2>
+<p>
+<%=@metadata.values%>
+</p>
+
+<p>
+<%= form_for :edited, url: metadata_path do |f| %>
+  <%= @metadata.keys.each_with_index do |s, i| %>
+    <%= f.label s %>: <%= f.text_area s, :value => @metadata.values[i] %> <br />
+  <% end %>
+  <%= f.submit %>
+<% end %>
+</p>

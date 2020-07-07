@@ -8,4 +8,6 @@ class PagesController < ApplicationController
   def about
     @title = "About us"
   end
+  def update_metadata
+  end
 end
