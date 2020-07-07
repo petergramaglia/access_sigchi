@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
   def home
   end
-  def metadata
+  def tool
+  end
+  def about
+  end
+  def update_metadata
   end
 end
