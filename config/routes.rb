@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/tool', to: 'pages#tool'
 
-  post '/upload_pdf', to: 'pdf_processor#upload_pdf'
+  post '/update_pdf', to: 'pdf_processor#update_pdf'
   post '/tool', to: 'pdf_processor#create'
 
   post '/pdf_processor' => 'pdf_processor#create'

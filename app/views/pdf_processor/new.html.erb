@@ -4,7 +4,7 @@
 
 <h4> Enter metadata information and upload PDF below: </h4>
 
- <%= form_tag( { :action => 'upload_pdf', :controller => 'pdf_processor'}, :multipart => true ) do %>
+ <%= form_tag( { :action => 'update_pdf', :controller => 'pdf_processor'}, :multipart => true ) do %>
   <div class="form-group">
     <label for="title">Title</label>
     <%= text_field_tag "title", nil, placeholder: "Enter paper title", class: "form-control" %>
