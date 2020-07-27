@@ -1,6 +1,8 @@
 class PdfProcessorController < ApplicationController
   def create
-    @pdf_processor = PdfProcessor.new(params[:pdf_processor])
+    # @pdf_processor = PdfProcessor.new(params[:pdf_processor])
+    puts @metadata.author
+    @pdf_processor = PdfProcessor.new(@metadata.file)
     display_metadata
   end
 
@@ -31,7 +33,11 @@ class PdfProcessorController < ApplicationController
     # end in the 'controllers/metadata/display.html.erb' file. This function is 
     # updated to process updated metadata as a single ':edited' variable.
 
-    @metadata = params[:edited].to_unsafe_h
+    # @metadata = params[:edited].to_unsafe_h
+    @metadata = params[:edited]
+    puts "HERE 1"
+    puts @metadata.title
+    create
     @doc.write('modified.pdf')
   end
 

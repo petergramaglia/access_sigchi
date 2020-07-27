@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'pdf_processor#new'
   get '/about', to: 'pages#about'
   get '/tool', to: 'pages#tool'
-  get '/display', to: 'metadata#display'
+  get '/display', to: 'pdf_processor#display'
 
   post '/update_pdf', to: 'pdf_processor#update_pdf'
   post '/tool', to: 'pdf_processor#create'
