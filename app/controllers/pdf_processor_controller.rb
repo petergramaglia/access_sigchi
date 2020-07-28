@@ -1,7 +1,7 @@
 class PdfProcessorController < ApplicationController
   def create
     # @pdf_processor = PdfProcessor.new(params[:pdf_processor])
-    puts @metadata.author
+    #puts @metadata.author
     @pdf_processor = PdfProcessor.new(@metadata.file)
     display_metadata
   end
@@ -14,11 +14,17 @@ class PdfProcessorController < ApplicationController
   end
 
   def update_pdf
-    # title = params[:title]
-    # author = params[:author]
-    # subject = params[:subject]
-    # date = params[:date]
-    # keywords = params[:keywords]
+    title = params[:title]
+    author = params[:author]
+    subject = params[:subject]
+    date = params[:date]
+    keywords = params[:keywords]
+
+    new_metadata_hash = { title: title, author: author, subject: subject, date: date, keywords: keywords }
+
+    original_pdf = params[:file].open # will blow up if no file submitted
+
+    @pdf_processor = PdfProcessor.new(original_pdf, new_metadata_hash.stringify_keys)
     # # byebug
     # puts "uploading pdf"
     # puts pdf_processor.original_filename
@@ -34,14 +40,18 @@ class PdfProcessorController < ApplicationController
     # updated to process updated metadata as a single ':edited' variable.
 
     # @metadata = params[:edited].to_unsafe_h
-    @metadata = params[:edited]
-    puts "HERE 1"
-    puts @metadata.title
-    create
-    @doc.write('modified.pdf')
+    
+
+    #@metadata = params[:edited]
+    #puts "HERE 1"
+    #puts @metadata.title
+    #create
+    modified_pdf = "#{Rails.root}/modified_pdf.pdf"
+    @pdf_processor.write(modified_pdf)
+    return send_file(modified_pdf)
   end
 
-  private def pdf_processor_params
-    params.require(:pdf_processor).permit(:file)
-  end
+  # private def pdf_processor_params
+  #   params.require(:pdf_processor).permit(:file)
+  # end
 end
