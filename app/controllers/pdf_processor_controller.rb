@@ -17,14 +17,13 @@ class PdfProcessorController < ApplicationController
     title = params[:title]
     author = params[:author]
     subject = params[:subject]
-    date = params[:date]
-    keywords = params[:keywords]
+    tags = params[:tags]
 
-    new_metadata_hash = { title: title, author: author, subject: subject, date: date, keywords: keywords }
+    new_metadata_hash = { Title: title, Author: author, Subject: subject, Tags: tags}
 
     original_pdf = params[:file].open # will blow up if no file submitted
 
-    @pdf_processor = PdfProcessor.new(original_pdf, new_metadata_hash.stringify_keys)
+    @pdf_processor = PdfProcessor.new(original_pdf, new_metadata_hash)
     # # byebug
     # puts "uploading pdf"
     # puts pdf_processor.original_filename

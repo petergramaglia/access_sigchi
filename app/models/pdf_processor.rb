@@ -18,6 +18,9 @@ class PdfProcessor
 
   def write(path)
     @formatted_doc = HexaPDF::Document.new(io: @original_pdf)
+    puts "+" * 20
+    puts @formatted_doc.trailer.info.value
+    puts "+" * 20
     @formatted_doc.trailer.info.value = @new_metadata_hash
     @formatted_doc.write(path)
     
