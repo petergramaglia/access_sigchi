@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <!-- bootstrap 4 stylesheet -->
+    <!-- Modified Bootstrap stylesheet-->
     <link rel="stylesheet" href="stylesheet.css">
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,6 +19,7 @@
   </head>
 
   <body>
+    <!-- Navbar -->
     <div class="container">
       <nav class="navbar  navbar-expand-md navbar-light justify-content-center">
 
@@ -31,8 +32,6 @@
           <ul class="nav navbar-nav ml-auto justify-content-end">
             <li class="nav-item">
               <%=link_to "Home", root_url, class: "nav-link"%>
-
-              <!--<a class="nav-link" href="<%=root_url%>">Home <span class="sr-only">(current)</span></a>-->
             </li>
 
             
@@ -54,11 +53,7 @@
 
     
     <main role="main" class="container">
-      <%# Peter, the markup you want to show up on every page
-      goes in this file. The views that are specific to different
-      controllers and actions will show up inside this main element.
-      That's what the yield call is doing.%>
-      <%= yield %>
+      <%= yield %> <!--Yields page content for each specific viw -->
     </main>
 
     <!-- bootstrap 4 js includes -->

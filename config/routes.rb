@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'pdf_processor#new'
+  root to: 'pdf_processor#new' # Home page: pdf_processor#new
   get '/about', to: 'pages#about'
-  get '/tool', to: 'pages#tool'
   
-  get '/help_me', to: 'pages#update_metadata'
-  get '/display', to: 'metadata#display'
-
   post '/update_pdf', to: 'pdf_processor#update_pdf'
-  post '/tool', to: 'pdf_processor#create'
-
   post '/pdf_processor' => 'pdf_processor#create'
 
   # resources :pdf_processor

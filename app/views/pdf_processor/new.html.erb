@@ -1,42 +1,41 @@
-<!-- Peter works his front-end magic in this file -->
+<!-- Front end stuff! -->
 <div class="form-container">
 
 <h4 class="text-center"> Enter metadata information and upload PDF below: </h4>
 <div class="form-fields-container">
- <%= form_tag( { :action => 'update_pdf', :controller => 'pdf_processor'}, :multipart => true ) do %>
-  <div class="form-group">
-    <label>Title</label>
-    <%= text_field_tag "title", nil, placeholder: "Enter paper title", class: "form-control" %>
-  </div>
 
-  <div class="form-group">
-    <label>Author</label>
-    <%= text_field_tag "author", nil, placeholder: "Enter author name(s)", class: "form-control" %>
-  </div>
+<!-- Create form, on submission call update_pdf action from pdf_processor controller -->
+<%= form_tag( { :action => 'update_pdf', :controller => 'pdf_processor'}, :multipart => true ) do %>
+    <div class="form-group">
+        <label>Title</label>
+        <%= text_field_tag "title", nil, placeholder: "Enter paper title", class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <label>Subject</label>
-    <%= text_field_tag "subject", nil, placeholder: "Enter subject", class: "form-control" %>
-  </div>
+    <div class="form-group">
+        <label>Author</label>
+        <%= text_field_tag "author", nil, placeholder: "Enter author name(s)", class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <label>Tags</label>
-    <%= text_field_tag "tags", nil, placeholder: "Enter tag(s)", class: "form-control" %>
-  </div>
+    <div class="form-group">
+        <label>Subject</label>
+        <%= text_field_tag "subject", nil, placeholder: "Enter subject", class: "form-control" %>
+    </div>
 
-  Upload file: <%= file_field_tag "file", accept: "application/pdf" %>
-      <br />
-   <%= submit_tag( "Upload file & download" )  %>
-   <% end %> 
+    <div class="form-group">
+        <label>Tags</label>
+        <%= text_field_tag "tags", nil, placeholder: "Enter tag(s)", class: "form-control" %>
+    </div>
 
-</div>
-  <br/>
-  <h2 class="text-center"> Access SIGCHI PDF Tagging Tool </h2>
-    <p>By using our converter you can easily metadata-tag and download PDFs. Our service is free and does not require any software or registration. </p>
-    <p> To tag a PDF, upload the untagged copy and enter the appropriate metadata information. The file will download to your downloads folder. </p>
-    <p> Enjoy! We hope you like our service. </p>
+    Upload file: <%= file_field_tag "file", accept: "application/pdf" %>
+        <br />
+    <%= submit_tag( "Upload file & download" )  %>
+    <% end %> 
 
 </div>
+    <br/>
+    <h2 class="text-center"> Access SIGCHI PDF Tagging Tool </h2>
+        <p>By using our converter you can easily metadata-tag and download PDFs. Our service is free and does not require any software or registration. </p>
+        <p> To tag a PDF, upload the untagged copy and enter the appropriate metadata information. The file will download to your downloads folder. </p>
+        <p> Enjoy! We hope you like our service. </p>
 
-
-<!--     <button> Dummy Upload </button> 
+</div>

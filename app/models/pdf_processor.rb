@@ -1,28 +1,22 @@
 require 'hexapdf'
 class PdfProcessor
 
+  # Initialize PDF processor class instance
   def initialize(original_pdf, new_metadata_hash)
-    puts "=" * 20
-    puts original_pdf
-    puts new_metadata_hash
-    puts "=" * 20
-    #@doc = original_pdf.values[0].open
     @original_pdf = original_pdf
     @new_metadata_hash = new_metadata_hash
   end
 
-  # def hexapdf
-  #   @formatted_doc = HexaPDF::Document.new(io: @doc)
-  #   return @formatted_doc
-  # end
 
+  # Write new, updated PDF to the input filename 'path'
   def write(path)
+    # Convert to HexaPDF format
     @formatted_doc = HexaPDF::Document.new(io: @original_pdf)
-    puts "+" * 20
-    puts @formatted_doc.trailer.info.value
-    puts "+" * 20
+
+    # Set metadata (trailer.info.value) equal to hash of user inputs
     @formatted_doc.trailer.info.value = @new_metadata_hash
+
+    # Write new doc to the path
     @formatted_doc.write(path)
-    
   end
 end
