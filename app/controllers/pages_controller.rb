@@ -10,4 +10,9 @@ class PagesController < ApplicationController
   end
   def update_metadata
   end
+
+  def erena
+  	@text = ":)"
+  end
+
 end
